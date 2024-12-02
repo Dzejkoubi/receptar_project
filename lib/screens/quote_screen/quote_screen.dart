@@ -1,11 +1,17 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:receptar_project/app/const/style_constants.dart';
+import 'package:receptar_project/shared/sized_boxes.dart';
 import 'package:receptar_project/shared/styled/styled_text.dart';
 
 @RoutePage()
 class QuoteScreen extends StatelessWidget {
   const QuoteScreen({super.key});
+
+  final String quote =
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.';
+
+  final String author = 'Author';
 
   @override
   Widget build(BuildContext context) {
@@ -13,64 +19,35 @@ class QuoteScreen extends StatelessWidget {
       backgroundColor: StyleConstants.backgroundColor,
       appBar: AppBar(
         backgroundColor: StyleConstants.backgroundColor,
-        title: const StyledHeadingText(text: 'Rozděleno podle zemí'),
+        title: const StyledHeadingText(text: 'Random Quote'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      body: Center(
         child: Column(
-          children: [
-            Center(
-                child: Column(
-              children: [
-                ProfileField(),
-              ],
-            )),
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              quote,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: "SourGummy-Regular",
+                fontSize: 24,
+                fontStyle: FontStyle.italic,
+                color: StyleConstants.primaryTextColor,
+              ),
+            ),
+            VerticalSpace(height: 20),
+            Text(
+              "-${author.toUpperCase()}",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: "SourGummy-Regular",
+                fontSize: 20,
+                color: StyleConstants.primaryTextColor,
+              ),
+            )
           ],
         ),
       ),
     );
-  }
-}
-
-class ProfileField extends StatelessWidget {
-  ProfileField({super.key});
-
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController RankController = TextEditingController();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: StyleConstants.primaryColor,
-        borderRadius: StyleConstants.borderRadius,
-      ),
-      padding: EdgeInsets.all(16),
-      child: TextField(
-        controller: nameController,
-        style: const TextStyle(
-          fontFamily: "SourGummy-Regular",
-          fontSize: 24,
-        ),
-        cursorColor: StyleConstants.primaryTextColor,
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          hintText: "Hledat...",
-          hintStyle: const TextStyle(
-            fontFamily: "SourGummy-Regular",
-            fontSize: 24,
-            color: StyleConstants.secondaryTextColor,
-          ),
-          suffixIcon: IconButton(
-            onPressed: () {
-              print("Text field content: ${nameController.text}");
-            },
-            icon: Icon(Icons.search),
-            color: StyleConstants.primaryTextColor,
-          ),
-        ),
-      ),
-    );
-    ;
   }
 }
