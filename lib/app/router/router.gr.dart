@@ -10,6 +10,25 @@
 part of 'router.dart';
 
 /// generated route for
+/// [FavoritesScreen]
+class FavoritesRoute extends PageRouteInfo<void> {
+  const FavoritesRoute({List<PageRouteInfo>? children})
+      : super(
+          FavoritesRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FavoritesRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const FavoritesScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [FindScreen]
 class FindRoute extends PageRouteInfo<void> {
   const FindRoute({List<PageRouteInfo>? children})
@@ -43,6 +62,44 @@ class HomeRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const HomeScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [QuoteScreen]
+class QuoteRoute extends PageRouteInfo<void> {
+  const QuoteRoute({List<PageRouteInfo>? children})
+      : super(
+          QuoteRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'QuoteRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const QuoteScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [RecepieScreen]
+class RecepieRoute extends PageRouteInfo<void> {
+  const RecepieRoute({List<PageRouteInfo>? children})
+      : super(
+          RecepieRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'RecepieRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const RecepieScreen();
     },
   );
 }

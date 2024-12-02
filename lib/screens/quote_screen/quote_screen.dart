@@ -4,8 +4,8 @@ import 'package:receptar_project/app/const/style_constants.dart';
 import 'package:receptar_project/shared/styled/styled_text.dart';
 
 @RoutePage()
-class FindScreen extends StatelessWidget {
-  const FindScreen({super.key});
+class QuoteScreen extends StatelessWidget {
+  const QuoteScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class FindScreen extends StatelessWidget {
       backgroundColor: StyleConstants.backgroundColor,
       appBar: AppBar(
         backgroundColor: StyleConstants.backgroundColor,
-        title: const StyledHeadingText(text: 'Najít recept'),
+        title: const StyledHeadingText(text: 'Rozděleno podle zemí'),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -22,7 +22,7 @@ class FindScreen extends StatelessWidget {
             Center(
                 child: Column(
               children: [
-                FindField(),
+                ProfileField(),
               ],
             )),
           ],
@@ -32,10 +32,11 @@ class FindScreen extends StatelessWidget {
   }
 }
 
-class FindField extends StatelessWidget {
-  FindField({super.key});
+class ProfileField extends StatelessWidget {
+  ProfileField({super.key});
 
-  final TextEditingController controller = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController RankController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +47,7 @@ class FindField extends StatelessWidget {
       ),
       padding: EdgeInsets.all(16),
       child: TextField(
-        controller: controller,
+        controller: nameController,
         style: const TextStyle(
           fontFamily: "SourGummy-Regular",
           fontSize: 24,
@@ -62,7 +63,7 @@ class FindField extends StatelessWidget {
           ),
           suffixIcon: IconButton(
             onPressed: () {
-              print("Text field content: ${controller.text}");
+              print("Text field content: ${nameController.text}");
             },
             icon: Icon(Icons.search),
             color: StyleConstants.primaryTextColor,
@@ -70,5 +71,6 @@ class FindField extends StatelessWidget {
         ),
       ),
     );
+    ;
   }
 }
