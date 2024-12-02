@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:receptar_project/app/const/style_constants.dart';
+import 'package:receptar_project/screens/find_screen/widgets/find_field.dart';
 import 'package:receptar_project/shared/styled/styled_text.dart';
 
 @RoutePage()
@@ -9,28 +11,24 @@ class FindScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffFFE32A),
+      backgroundColor: StyleConstants.backgroundColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xffFFE32A),
+        backgroundColor: StyleConstants.backgroundColor,
         title: const StyledHeadingText(text: 'Najít recept'),
       ),
-      body: Column(
-        children: [
-          const Center(
-              child: Column(
-            children: [
-              StyledSmallText(text: 'the fox jumps over the lazy dog'),
-              StyledSmallBlackText(text: 'the fox jumps over the lazy dog'),
-              StyledSmallLightText(text: 'the fox jumps over the lazy dog'),
-              StyledMediumText(text: 'the fox jumps over the lazy dog'),
-              StyledMediumBlackText(text: 'the fox jumps over the lazy dog'),
-              StyledMediumLightText(text: 'the fox jumps over the lazy dog'),
-              StyledLargeText(text: 'the fox jumps over the lazy dog'),
-              StyledLargeBlackText(text: 'the fox jumps over the lazy dog'),
-              StyledLargeLightText(text: 'the fox jumps over the lazy dog'),
-            ],
-          )),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Center(
+                child: Column(
+              children: [
+                FindField(),
+                StyledSmallText(text: "Vyhledávání receptů"),
+              ],
+            )),
+          ],
+        ),
       ),
     );
   }

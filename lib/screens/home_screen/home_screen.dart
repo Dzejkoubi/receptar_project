@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:receptar_project/app/const/style_constants.dart';
 import 'package:receptar_project/app/router/router.dart';
 import 'package:receptar_project/screens/home_screen/styled_main_text.dart';
 import 'package:receptar_project/shared/styled/styled_text.dart';
@@ -21,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffFFE32A),
+      backgroundColor: StyleConstants.backgroundColor,
       body: Stack(
         children: <Widget>[
           Center(
